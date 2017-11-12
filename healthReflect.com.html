@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>healthReflect.com</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inline-scale=1">
+    <link rel="stylesheet" href="scripts/bootstrap.css" />
+    <link rel="stylesheet" href="scripts/bootstrap.min.css" />
+
+    <script type="text/javascript" src="scripts/jquery.min.js" ></script>
+    <script type="text/javascript" src="scripts/bootstrap.js" ></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js" ></script>
+
+    <!--Script to fetch Platform types from WebAPI-->
+    <script type="text/javascript">
+        function getGamingPlatform() {
+            $(document).ready(function () {
+                $.ajax({
+                    url: 'http://starlord.hackerearth.com/gamesarena',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        var jsonResponse=[];
+                        if ($("#platformList  tbody").length == 0) {
+                            $("#platformList").append("<tbody><tr></tr></tbody>");
+                        }
+                        else
+                        {
+                            $("#platformList tr").empty();
+                        }
+                        function unique(array){
+                            return $.grep(array,function(el,index){
+                                return index == $.inArray(el,array);
+                            });
+                        }
+                        for (i=1;i<data.length;i++) {
+                            jsonResponse.push(data[i].platform);
+                        }
+                        $.each(unique(jsonResponse), function(i, value){
+                            $('#platformList tr').append("<td><input type='button' value=' " + value + "' id='btn"+value+"'/></td>");
+                        });
+
+                    },
+                    error: function (request, message, error) {
+                        alert(request.status);
+                    }
+                });
+            });
+        }
+    </script>
+
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+        @media screen and (max-device-width: 500px) {
+            body {
+                height: auto;
+                padding: 15px;
+            }
+        }
+            .textStyle {
+                font-family: "Monotype Corsiva";
+            }
+
+            .parallax {
+                /* The image used */
+                background-image: url("images/sky.jpg");
+
+
+                /* Set a specific height */
+                /* max-width: 500px; */
+                height: 650px;
+
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        .parallax1 {
+            /* The image used */
+            background-image: url("images/games.jpg");
+
+
+            /* Set a specific height */
+            /* max-width: 500px; */
+            height: 650px;
+
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .parallax2 {
+            /* The image used */
+            background-image: url("images/galaxy.jpg");
+
+
+            /* Set a specific height */
+            /* max-width: 500px; */
+            height: 650px;
+
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        header{
+            background-color: #292b2c;
+        }
+        #gameSearch{
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        #gameSearch:focus{
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+            width:120%;
+
+        }
+
+    </style>
+
+
+
+</head>
+
+<body>
+<!--***Using 1st DIV*** (Planet Of Apes)-->
+<br />
+
+<!--Header Part-->
+<header class="fixed-top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <a class="navbar-brand" href="http://www.healthreflect.com"><img src="img/hreflect-logo.png" alt="healthReflect"/> </a>
+            </div>
+            <div col-md-1>
+                <button type="button" class="btn btn-outline-info" data-toggle="collapse" data-target="#showPlatform" onClick="getGamingPlatform();">Platform</button> $nbsp;$nbsp;
+            </div>
+            <div col-md-1>
+                <input type="search" id="gameSearch" placeholder="Search" />
+            </div>
+
+        </div>
+    </div>
+</header>
+<br/>
+
+<!-- *** Display List of available platforms***-->
+<div id="showPlatform" class="collapse" style="background-color: #bcdff1">
+    <table class="" id="platformList" border="1">
+        <thead>Available Platform</thead>
+
+
+    </table>
+
+</div>
+
+<div  class="parallax">
+<div class="container">
+    <strong style="background-color: #f2dede">Today</strong> <br />
+    <img class="img-thumbnail" src="images/PlanetOfApes.jpg" alt="Planet of Apes"
+         data-toggle="modal" data-target="#apesIntro" width="350px" height="529px" />
+
+
+        <div id="apesIntro" class="modal fade" role="dialog" style="background-color: #f2dede">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"> &times </button>
+            </div>
+            <label class="textStyle"> Caesar (Andy Serkis) and his apes are forced into a deadly conflict <br />
+                with an army of humans led by a ruthless Colonel (Woody Harrelson).</label> <br />
+        <!--
+            <video width="400px" height="400px" controls>
+                <source src="images/PlanetOfApes.mp4" type="video/mp4">
+            </video> <br/>
+        -->
+            <div align="center">
+                <iframe width="400px" height="400px"
+                  src="https://www.youtube.com/embed/UEP1Mk6Un98" frameborder="0" gesture="media" allowfullscreen>
+                </iframe>
+            </div>
+
+            <label class="textStyle">
+                But after the apes suffer unimaginable losses, Caesar wrestles with <br />
+                his darker instincts and resolves to avenge his kind, pitting him against <br />
+                the Colonel in an epic battle that will determine the fate of both their <br />
+                species...and the future of the planet. </label><br/>
+
+
+        </div>
+        </div>
+        </div>
+</div>
+
+<br />
+
+<!--***Using 2nd DIV*** (Asphalt Xtreme)-->
+
+
+<div class="container">
+    <strong style="background-color: #f2dede">Tomorrow</strong> <br />
+    <img class="img-thumbnail" src="images/asphalt.jpg" alt="Asphalt xtreme"
+         data-toggle="modal" data-target="#AsphaltIntro" width="350px" height="529px" />
+
+
+        <div id="AsphaltIntro" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+            <div class="modal-content">
+           <header class="fixed-top" style="background-color: #5bc0de"> <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"> &times </button>
+           </div> </header>
+
+            <strong>NO ROAD. NO RULES! </strong> <br/>
+
+            <label class="textStyle">
+                Break free from the ordinary and enter uncharted <br/>
+                territory with Asphalt Xtreme: Rally Racing! <br />
+                So forget everything you know about racing, because all <br/>
+                you need here is your instincts, real skill and a <br/>
+                fearless desire for speed. You’ll race around sand hills, <br/>
+                charge through canyons, drift across the dirt and climb <br/>
+                past your opponents to reach the finish line as part of an <br/>
+                absolutely extreme racing experience! </label> <br/>
+            <!--
+            <video width="400px" height="400px" controls >
+                <source src="images/asphalt.mp4" type="video/mp4">
+            </video>
+            -->
+                <div align="center">
+                    <iframe width="400px" height="400px"
+                            src="https://www.youtube.com/embed/NfIJd6lRD1g" frameborder="0" gesture="media" allowfullscreen>
+                    </iframe>
+                </div><br/>
+
+            <strong>UNLEASH YOUR STYLE:</strong> <br/> <label class="textStyle"> There are no limits to the custom <br/>
+            options, as you pick from 7 offroad vehicle types,<br/>
+            each with a unique flavor of gameplay. This<br/>
+            allows you to constantly discover fresh, challenging<br/>
+            experiences. And thanks to regularly added <br/>
+            updates, there’s always something new to try out. </label> <br/>
+
+        </div>
+        </div>
+        </div>
+
+</div>
+</div>
+
+<!--*** End of first parallax view***-->
+<br /> <br/>
+
+<div class="parallax1">
+<!--***Using 3rd DIV (Dungeon Hunter)*** -->
+
+<div class="container"> <br/> <br/><br /> <br/>
+    <strong style="background-color: #f2dede">FRIDAY</strong> <br />
+    <img class="img-thumbnail" src="images/DungeonHunter.jpeg" alt="Dungeon"
+         data-toggle="modal" data-target="#DungeonIntro" width="350px" height="529px" />
+
+        <div id="DungeonIntro" class="modal fade" role="dialog" onselect="expando">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"> &times </button>
+            </div>
+
+            <label class="textStyle">
+                Venture forth into the most immersive, accomplished, <br/>
+                and addictive chapter of the acclaimed action RPG saga! <br/> <br/>
+                ***** REDISCOVER THE THRILL OF DUNGEON CRAWLER GAMES <br/>
+                - Hack your way through an EPIC STORYLINE & a dark <br/>
+                fantasy adventure. SLASH hundreds of enemies and<br/>
+                massive bosses. LOOT countless items </label><br/>
+
+        <!--
+            <video width="400px" height="400px" controls >
+                <source src="images/DungeonHunter.mp4" type="video/mp4">
+            </video>
+        -->
+                <div align="center">
+                    <iframe width="400px" height="400px"
+                            src="https://www.youtube.com/embed/YvnQMW4T5Ds" frameborder="0" gesture="media" allowfullscreen>
+                    </iframe>
+                </div><br/>
+
+            <strong>***** EXPERIENCE A TRUE RPG </strong><br />
+            <label class="textStyle"> Choose from 4 types of warriors with unique <br />
+                combat styles. UPGRADE your battle skills. <br />
+                CUSTOMIZE, craft and charm your gear. <br />
+                Throughout the game, unveil the mysteries <br />
+                surrounding your warriors. <br /> <br />
+
+                ***** GO FOR MULTIPLAYER ACTION <br />
+                - Fight along your friends in the CO-OP arenas <br />
+                - Show off your battle skills in the action-packed PVP mode <br />
+                - Gather up and fight other warriors in TEAM DEATHMATCH games. </label><br />
+
+        </div>
+        </div>
+        </div>
+
+</div>
+<br/>
+<!--***Using 4th DIV*** (Angry Bird)-->
+
+<div class="container">
+    <strong style="background-color: #f2dede">SATURDAY</strong> <br />
+    <img class="img-thumbnail" src="images/angryBird.jpg" alt="Asphalt xtreme"
+         data-toggle="modal" data-target="#AngryBirdIntro" width="350px" height="529px"/>
+
+        <div id="AngryBirdIntro" class="modal fade" role="dialog" style="background-color: #2aabd2">
+             <div class="modal-dialog">
+             <div class="modal-content">
+             <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"> &times </button>
+             </div>
+
+            <strong>OFF TO RIO!</strong> <br />
+            <label class="textStyle">
+                The original Angry Birds have been kidnapped and <br />
+                taken to the magical city of Rio de Janeiro! <br />
+                They’ve managed to escape, but now they must save <br />
+                their friends Blu and Jewel – two rare macaws<br />
+                and the stars of the hit movies, Rio and Rio 2. </label> <br /><br />
+
+            <strong> THE MIGHTY EAGLE! </strong><br />
+            <label class="textStyle">
+                The Mighty Eagle is a one-time in-app purchase <br />
+                that you can use forever. If you get stuck on a level, <br />
+                this cool creature will dive from the skies to smash <br />
+                those meddling monkeys into oblivion. There’s just<br />
+                one catch: you can only use the Mighty Eagle once per <br />
+                hour! Mighty Eagle also includes all new gameplay<br />
+                goals and achievements. </label><br />
+
+         <!--
+            <video width="400px" height="400px" controls >
+                <source src="images/angryBird.mp4" type="video/mp4">
+            </video>
+         -->
+                 <div align="center">
+                     <iframe width="400px" height="400px"
+                             src="https://www.youtube.com/embed/uvi6WZKHCJ0" frameborder="0" gesture="media" allowfullscreen>
+                     </iframe>
+                 </div> <br/>
+
+            <strong><i> POWER-UPS!</i></strong> <br />
+            <label class="textStyle">
+                Boosting your birds’ abilities helps you complete <br />
+                levels with three stars so you can unlock extra content! <br />
+                Power-ups include the Sling Scope for laser targeting, <br />
+                Power Potion to supersize your birds, Samba Burst for <br />
+                dancing destruction, TNT for a little explosive help <br />
+                and Call the Flock for a blizzard of Macaw mayhem! </label><br />
+
+
+        </div>
+        </div>
+        </div>
+
+</div>
+</div>
+<br />
+
+<div class="parallax2">
+<!--***Using 5th DIV*** (Fun with Silly Physics)-->
+
+<div class="container">
+    <strong data-toggle="collapse" data-target="#AppList" style="background-color: #f2dede">Fun with Silly Physics</strong>
+    <br />
+    <table width="245px" height="190px" border="0">
+        <tr>
+            <td><img src="images/blockGame.jpg" width="50px" height="50px" /></td>
+            <td style="background-color:lightgray" >Block Game <br/><h6>good for brains</h6> </td>
+            <td><button class="btn btn-success btn-sm">GET</button></td>
+        </tr>
+        <tr>
+            <td><img src="images/candyCrush.png" width="50px" height="50px" /></td>
+            <td>Candy Crush <br/><h6>Build your empire</h6> </td>
+            <td><button class="btn btn-success btn-sm">GET</button></td>
+        </tr>
+        <tr>
+            <td><img src="images/crossword.jpg" width="50px" height="50px" /></td>
+            <td style="background-color:lightgray">CrossWord <br/><h6>Play to win</h6> </td>
+            <td><button class="btn btn-success btn-sm">GET</button></td>
+        </tr>
+    </table>
+
+    <table id="AppList" class="collapse" width="245px" height="288px" border="0">
+        <tr>
+            <td><img src="images/cutTheRope.jpg" width="50px" height="50px" /></td>
+            <td>Cut the Rope <br/><h6>Cut to make chain</h6> </td>
+            <td><button class="btn btn-success btn-sm">GET</button></td>
+        </tr>
+        <tr>
+            <td><img src="images/phyQuiz.jpg" width="50px" height="50px" /></td>
+            <td style="background-color:lightgray">Physics Quiz <br/><h6>Train your Brain</h6> </td>
+            <td><button class="btn btn-success btn-sm">GET</button></td>
+        </tr>
+        <tr>
+            <td><img src="images/puzzle.jpg" width="50px" height="50px" /></td>
+            <td>PUZZLE <br/><h6>Solve to Win</h6> </td>
+            <td><button class="btn btn-success btn-sm">GET</button></td>
+        </tr>
+        <tr>
+            <td><img src="images/stickMan.jpg" width="50px" height="50px" /></td>
+            <td style="background-color:lightgray">Stick Man <br/><h6>Hit the Stick to win</h6> </td>
+            <td><button class="btn btn-success btn-sm">GET</button></td>
+        </tr>
+        <tr>
+            <td><img src="images/sunBall.jpg" width="50px" height="50px" /></td>
+            <td>Sun Ball <br/><h6>Avoid the Sun ball</h6> </td>
+            <td><button class="btn btn-success btn-sm">GET</button></td>
+        </tr>
+    </table>
+
+</div>
+<br />
+<!--***Using 6th DIV*** (App of the Day)-->
+
+<div class="container">
+    <strong style="background-color: #f2dede">UPCOMING...</strong> <br />
+    <img class="img-thumbnail" src="images/AppofDay.jpeg" alt="Asphalt xtreme"
+         data-toggle="modal" data-target="#AppofDayIntro" width="350px" height="529px" />
+
+
+        <div id="AppofDayIntro" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal"> &times </button>
+            </div>
+
+            <strong>★ Download App of the Day today! </strong> <br />
+            <label class="textStyle">
+                There’s a welcome gift waiting just for you as well  <br />
+                as a special offer on one of our best apps from <br/>
+                the Android Play Store. ★  <br />  <br />
+
+                Free App of the Day has a welcome surprise waiting  <br />
+                just for you with one of our best applications from  <br />
+                the Play Store as a free exclusive bonus.</label> <br /> <br />
+            <strong> ★ Can’t find the Android Play Store’s best apps? </strong>  <br />
+            <label class="textStyle">
+                Download Free App of the Day today and benefit  <br />
+                from our exclusive selection of the finest in Android apps. ★ <br />
+                Feel lost amongst the millions of apps and games on offer?  <br />
+                Every week, Free App of the Day experts review, test,  <br />
+                and evaluate hundreds of Google Play Store apps  <br />
+                and only save the very best ones for you! </label> <br />
+
+         <!--
+            <video width="400px" height="400px" controls >
+                <source src="images/AppofDay.mp4" type="video/mp4">
+            </video>
+          -->
+                <div align="center">
+                    <iframe width="400px" height="400px"
+                            src="https://www.youtube.com/embed/J2WdgrMI-GE" frameborder="0" gesture="media" allowfullscreen>
+                    </iframe>
+                </div>  <br/>
+
+            <strong> Thanks to the App of the Day selection, </strong> <br />
+            <label class="textStyle">
+                enjoy 24/7 access to every kind of application: whether<br />
+                entertaining, instructive, or amazing, they're always <br />
+                useful. The most excellent video, music, reader, <br />
+                and photo apps are right here! Also find the <br />
+                best casual, card, hardcore, RPG,<br />
+                and casino games, among others. </label> <br />
+
+
+        </div>
+        </div>
+        </div>
+
+</div>
+</div>
+
+<br/> <br/>
+<div class="container">
+    <footer>
+        <table width="350px"  border="0">
+            <th style="background-color: #f2dede">Connect us @ </th>
+            <tr>
+                <td align="right"><img src="images/facebook.gif" width="80px" height="80px" /> </td>
+                <td><img src="images/twitter.gif"  width="60px" height="60px" /> </td>
+                <td> <img src="images/linkedin.gif"  width="60px" height="40px" /> </td>
+            </tr>
+        </table>
+    </footer>
+
+</div>
+
+
+
+<!--Writing angular code for module and controller-->
+
+
+
+</body>
+</html>
