@@ -1,0 +1,81 @@
+<!Doctype html>
+
+<!-- 
+*********************************
+* Author: Pushp Singh
+* licensed: Pushp Singh
+* Mobile: +91-9584989057
+*
+**********************************
+-->
+<html lang="eng">
+<head>
+    <title>3D Tetrahedron using WebGL library.</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+     <style>
+	 canvas{
+	 width: 100%; 
+	 height: 100% 
+	 }
+	body{
+	background: url(mathematics.jpg);
+	width: 800px; 
+	height: 500px;
+	}
+	</style>
+</head>
+<body>
+<marquee> Rotating this Tetrahedron along X-axis. </marquee>
+
+	<script src="jquery-3.2.1.js"></script>
+    <script src="three.js"></script>
+	
+    <script> 
+	// creating a Scene
+	var scene = new THREE.Scene(); 
+	
+	// Adding Perspective Camera
+	// NOTE: There are 3 cameras: Orthographic, Perspective and Combined.	
+	var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000); 
+	 
+	
+	//create WebGL renderer 
+	var renderer = new THREE.WebGLRenderer();
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	document.body.appendChild( renderer.domElement );
+	
+	//Drawing a Tetrahedron.
+	var pyramidgeometry = new THREE.CylinderGeometry(0, 0.8, 4, 4, false);
+	
+	//Change colour of Tetrahedron using Wireframe
+    var pyramidmaterial = new THREE.MeshBasicMaterial({wireframe: true, color: 0x0ff000});
+    var pyramid = new THREE.Mesh(pyramidgeometry, pyramidmaterial); //This creates the cone
+    pyramid.position.set(2.1,0,0);
+    scene.add(pyramid);
+	
+	//moving camera outward of centre to Z-axis, because tetrahedron is being created at the centre
+	camera.position.z = 5;
+	
+	//we have a scene, a camera, a tetrahedron and a renderer. 
+	
+	/*A render loop essentially makes the renderer draw the scene 60 times per second.
+	I have used requestAnimationFrame() function.*/
+	function render() {
+    requestAnimationFrame(render);
+	
+	
+	pyramid.rotation.x += 0.01;
+	/*uncomment it to make rotation along y and z axis too.
+	pyramid.rotation.y += 0.01;
+   	pyramid.rotation.z += 0.01;
+	*/
+    renderer.render(scene, camera);
+	};
+	// calling the function
+	render();
+	 
+    </script>
+</body>
+</html>
