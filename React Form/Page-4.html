@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!-- 
+******************************************************
+* Author: Pushp Singh								 *
+* E-mail: pushp.ranjansingh@gmail.com				 *
+* Mobile: +91-9584989057							 *
+* All the Contents are copyrigt undr MIT lecense.	 *
+*													 *
+******************************************************
+-->
+<html lang="eng">
+<head>
+<title>Sign Up</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+  <script src="https://fb.me/react-dom-0.14.3.js"></script>
+  <script src="https://fb.me/react-0.14.3.min.js"></script>
+  <script src="https://fb.me/react-dom-0.14.3.min.js"></script>
+  <script src="https://fb.me/react-with-addons-0.14.3.js"></script>
+  <script src="https://fb.me/react-dom-0.14.3.js"></script>
+
+<style>
+
+input[type=text], input[type=email], input[type=password] {
+    width: 100%;
+    padding: 0px 5px;
+    margin: 0px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid grey;
+}
+
+#strip{
+position: relative;
+
+}
+#signUp{
+position: absolute;
+top: 4%;
+left: 40%;
+z-index: 3px;
+}
+#stack4bg{
+position: absolute;
+top: 15%;
+left: 1.5%;
+z-index: 3px;
+border-bottom-left-radius: 1em;
+border-bottom-right-radius: 1em;
+}
+#strip2{
+position: absolute;
+top: 50%;
+left: 10%;
+z-index: 3px;
+}
+#signUpForm{
+position: absolute;
+top: 50%;
+left: 12%;
+z-index: 3px;
+}
+#laptop{
+position: absolute;
+top: 60%;
+left: 50%;
+z-index: 3px;
+}
+#ai{
+position: absolute;
+top: 67%;
+left: 50%;
+z-index: 3px;
+}
+#drive{
+position: absolute;
+top: 54%;
+left: 56%;
+z-index: 3px;
+}
+#ps{
+position: absolute;
+top: 45%;
+left: 67%;
+z-index: 3px;
+}
+#db{
+position: absolute;
+top: 78%;
+left: 77%;
+z-index: 3px;
+}
+</style>
+
+</head>
+
+<body>
+
+
+<br/>
+<div class="container">
+
+<div class="col-sm-12">
+
+<img id="strip" src="Elements/strip.png" class="image-responsive" alt="strip" width="89.5%" height="100%"/> 
+<div> <h2 id="signUp" style="font-color: white">Sign Up </h2></div>
+<img id="stack4bg" src="Elements/stack4bg.png" class="image-responsive" alt="stack4bg" width="87%" height="85%"/>
+
+
+<img id="strip2" src="Elements/strip.png" class="image-thumbnail" alt="strip2" width="38%" height="38%"/> 
+
+<div id="signUpForm">
+ <div id="UserSignupForm"> </div>
+ </div>
+
+</div>
+
+</div>
+
+<!-- Adding all the device Icon here-->
+<div id="devices">
+<img id="laptop" src="Elements/Laptop.png" class="image-thumbnail" alt="Laptop" width="25%" height="40%"/>
+<img id="ai" src="Elements/ai.png" class="image-thumbnail" alt="ai" width="3%" height="17%"/>
+<img id="drive" src="Elements/drive.png" class="image-thumbnail" alt="drive" width="3%" height="17%"/>
+<img id="ps" src="Elements/ps.png" class="image-thumbnail" alt="ps" width="4%" height="19%"/>
+<img id="db" src="Elements/db.png" class="image-thumbnail" alt="db" width="3%" height="17%"/>
+
+</div>
+
+
+<!-- ***** Creating Form Uisng React library (View part)***** -->
+<script type="text/babel">
+ var Myform = React.createClass({
+ render: function(){
+ return(
+	<div><br/><br/>
+	 <strong> CREATE AN ACCOUNT</strong> <br/><br/><br/>
+	 
+	 <form name="signUpForm" id="register" method="post">
+	 <label>E-MAIL</label><br/>
+	 <input type="email" /><br/>
+	 <label>USERNAME</label><br/>
+	 <input type="text" /><br/>
+	 <label>PASSWORD</label><br/>
+	 <input type="password" /><br/>
+	 </form> <br/> <br/>
+
+	 </div>
+ );
+}
+ });
+ 
+ ReactDOM.render(
+ <Myform/>, document.getElementById("UserSignupForm")
+ );
+  
+</script>
+
+</body>
+
+</html>
