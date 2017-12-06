@@ -1,0 +1,32 @@
+
+
+/*Reference CSS*/
+#loginPage{
+	position: absolute;
+	padding:10%;
+	top: 60%;
+	}
+#whatsApp{
+	position: absolute;
+	padding: 30%;
+	top: 10%;
+	}
+#Twitter{
+	position: absolute;
+	padding:38%;
+	top: 5%;
+	}
+#linkedin{
+	position: absolute;
+	padding:50%;
+	top: 10%;
+	}
+#facebook{
+	-webkit-animation-duration: 3s; 
+	position: absolute;
+	padding:40%;
+	top: 2%;
+	}
+.iconFormClass{
+	-webkit-animation-duration: 3s; 
+}

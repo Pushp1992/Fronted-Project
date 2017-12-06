@@ -1,0 +1,60 @@
+
+/*Common CSS*/
+body {
+  height: 1500px;
+ 
+  }
+.bottomMenu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  -webkit-animation-duration: 2s; 
+ }
+.hide {
+  opacity: 0;
+  top: 100%;
+  }
+.show {
+  opacity: 1;
+  top: 0;
+  }
+
+/*MENU Page CSS and PAGE-1 CSS */
+#stars{
+position: relative;
+}
+
+#rocket{
+position: absolute;
+top: 22%;
+left: 150px;
+z-index: 3px;
+}
+#cloud{
+position: absolute;
+top: 78%;
+}
+
+#btn{
+position: absolute;
+bottom: 3px;
+width: 12%;
+border-radius: 2em;
+left: 280px;
+}
+#signup1{
+border-radius: 2em;
+}
+
+#content{
+position: relative;
+top: 200px;
+left: 150px;
+z-index: 3px;
+}
+h3{
+font-style: bold white;
+}
+div{
+color: ;
+}

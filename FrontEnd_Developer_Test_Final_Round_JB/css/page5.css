@@ -1,0 +1,31 @@
+
+
+
+/*PAGE-5 CSS*/
+#header{
+background-color: #D1F2EB;
+}
+#dlDbtn{
+position: absolute;
+top: 76%;
+left: 49%;
+z-index: 3px;
+border-radius: 25px;
+width: 60%;
+
+}
+#Waves1{
+position: absolute;
+top: 75%;
+left: 0%;
+z-index: 3px;
+}
+#Waves2{
+position: absolute;
+top: 75%;
+left: 0%;
+z-index: 3px;
+}
+div{
+color: ;
+}

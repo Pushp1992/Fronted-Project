@@ -1,0 +1,44 @@
+
+
+/*PAGE-6 CSS*/
+#div1{
+background-color: white;
+}
+#div2{
+background-color: #F8F8FF;
+height: 200px;
+}
+#div3{
+background-color: #00BFFF;
+height: 350px;
+color: white;
+}
+#vl1{
+border-right: 2px solid white;
+position: absolute;
+top: 10%;
+height: 20%;
+left: 35%;
+}
+#vl2{
+border-right: 2px solid white;
+position: absolute;
+top: 10%;
+height: 20%;
+left: 68%;
+}
+#tradeicon{
+position: absolute;
+top: 7.5%;
+left: 78%;
+z-index: 3px;
+}
+a{
+color: white;
+}
+option{
+color: black;
+}
+select{
+color: black;
+}

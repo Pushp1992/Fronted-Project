@@ -1,0 +1,78 @@
+
+
+/*PAGE-4 CSS*/
+input[type=text], input[type=email], input[type=password] {
+    width: 100%;
+    padding: 0px 5px;
+    margin: 0px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid grey;
+}
+
+#strip{
+position: relative;
+
+}
+#signUp{
+position: absolute;
+top: 4%;
+left: 40%;
+z-index: 3px;
+}
+#stack4bg{
+position: absolute;
+top: 15%;
+left: 1.5%;
+z-index: 3px;
+border-bottom-left-radius: 1em;
+border-bottom-right-radius: 1em;
+}
+#strip2{
+position: absolute;
+top: 40%;
+left: 10%;
+z-index: 3px;
+}
+#signUpForm{
+-webkit-animation-duration: 3s;
+position: absolute;
+top: 30%;
+left: 12%;
+z-index: 3px;
+}
+#laptop{
+-webkit-animation-duration: 3s;
+position: absolute;
+top: 50%;
+left: 50%;
+z-index: 3px;
+}
+#ai{
+-webkit-animation-duration: 3s;
+position: absolute;
+top: 57%;
+left: 50%;
+z-index: 3px;
+}
+#drive{
+-webkit-animation-duration: 3s;
+position: absolute;
+top: 44%;
+left: 56%;
+z-index: 3px;
+}
+#ps{
+-webkit-animation-duration: 3s;
+position: absolute;
+top: 35%;
+left: 67%;
+z-index: 3px;
+}
+#db{
+-webkit-animation-duration: 3s;
+position: absolute;
+top: 68%;
+left: 77%;
+z-index: 3px;
+}
